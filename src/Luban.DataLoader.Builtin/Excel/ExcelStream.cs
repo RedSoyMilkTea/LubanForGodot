@@ -278,10 +278,10 @@ public class ExcelStream
 
     public const string END_OF_LIST = "}";
 
-
+//判断单元格内容是否需要被跳过，此处二次开发添加全局关键字"globa1skip"
     private bool IsSkip(object x)
     {
-        return x == null || (x is string s && string.IsNullOrEmpty(s));
+        return x == null || (x is string s && (string.IsNullOrWhiteSpace(s) || s == "globa1skip"));
     }
 
     public bool TryReadEOF()
