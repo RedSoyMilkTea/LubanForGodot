@@ -88,6 +88,10 @@ internal static class Program
 
         [Option('v', "verbose", Required = false, HelpText = "verbose")]
         public bool Verbose { get; set; }
+
+        //添加额外的参数
+        [Option("skipKey", Required = true, HelpText = "global skip key")]
+        public bool SkipKey { get; set; }
     }
 
     private static ILogger s_logger;
